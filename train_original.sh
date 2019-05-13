@@ -8,3 +8,7 @@ python scripts/train/few_shot/run_train.py \
  --data.test_way 5 \
  --data.test_shot 0 \
  --log.exp_dir results_orginal
+
+
+python scripts/predict/few_shot/run_eval.py \
+--model.model_path results_orginal/best_model.pt
