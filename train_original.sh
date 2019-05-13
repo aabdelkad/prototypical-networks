@@ -1,9 +1,6 @@
 #!/usr/bin/env bash
 
-python scripts/original_script \
---images_base_dir '.'\
---split_txt_dir 'data/omniglot/splits/original' \
---validation_size 0.50
+python scripts/original_script.py --images_base_dir '.' --split_txt_dir 'data/omniglot/splits/original' --validation_size 0.50
 
 
 python scripts/train/few_shot/run_train.py \
