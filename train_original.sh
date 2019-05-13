@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-python scripts/original_script.py --images_base_dir '.' --split_txt_dir 'data/omniglot/splits/original' --validation_size 0.50
+python scripts/original_script.py --images_base_dir '.' --split_txt_dir 'data/omniglot/splits/original' --validation_size 0.25
 
 
 python scripts/train/few_shot/run_train.py \
  --data.split original \
- --data.way 5 \
+ --data.way 10 \
  --data.shot 1 \
  --data.query 5 \
- --data.test_way 5 \
+ --data.test_way 10 \
  --data.test_shot 0 \
  --log.exp_dir results_orginal
 

@@ -45,7 +45,7 @@ evaluation_files = list(filter(lambda x: True if '.png' in x else False, list(zi
 
 trainval = prepare_txt_file_content(background_files)
 
-print('writing trainval txt')
+print('writing trainval txt, number of trainval images={n}'.format(n=len(trainval)))
 with open(trainval_path, 'w') as trainval_file:
     trainval_file.writelines(trainval)
 
@@ -58,13 +58,13 @@ val_files = background_files[-split_index:]
 
 train = prepare_txt_file_content(train_files)
 
-print('writing train txt')
+print('writing train txt, number of train images={n}'.format(n=len(train)))
 with open(train_path, 'w') as train_file:
     train_file.writelines(train)
 
 val = prepare_txt_file_content(val_files)
 
-print('writing val txt')
+print('writing val txt, number of val images={n}'.format(n=len(val)))
 with open(val_path, 'w') as val_file:
     val_file.writelines(val)
 
@@ -74,7 +74,7 @@ with open(val_path, 'w') as val_file:
 
 test = prepare_txt_file_content(evaluation_files)
 
-print('writing test txt')
+print('writing test txt, number of test images={n}'.format(n=len(test)))
 with open(test_path, 'w') as test_file:
     test_file.writelines(test)
 
