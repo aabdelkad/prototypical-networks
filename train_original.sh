@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-export CUDA_VISIBLE_DEVICES=0,1,2
+export CUDA_VISIBLE_DEVICES=0
 
 python scripts/original_script.py --images_base_dir '.' --split_txt_dir 'data/omniglot/splits/original' --validation_size 0.25
 
