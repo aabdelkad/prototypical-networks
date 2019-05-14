@@ -7,7 +7,8 @@ def prepare_txt_file_content(files):
     for name in files:
         _, alphabet, character, _ = name.split('/')
         line = os.path.join(alphabet, character, 'rot000') + '\n'
-        content.append(line)
+        if line not in content:
+            content.append(line)
     return content
 
 parser = argparse.ArgumentParser(description='Create original split')
@@ -40,6 +41,8 @@ background_files = list(filter(lambda x: True if '.png' in x else False, list(zi
 
 zip = zipfile.ZipFile(images_evaluation_path)
 evaluation_files = list(filter(lambda x: True if '.png' in x else False, list(zip.namelist())))
+
+print("total images number {n}".format(n=len(evaluation_files)+len(background_files)))
 
 ############# Trainval ##########################################################
 
